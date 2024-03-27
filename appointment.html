@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BetterHelp</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all/css"
+integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+<link rel="styleesheet" href="log.css">
+</head>
+<header>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-10 border">
+            <div class="logo border">
+                <a href="hospital.html"><img src="betterhelp.jpg" width="175px" height="75px" alt="logo"></a>
+            </div>
+        <div class="menu">
+            <ul>
+                <li>
+                    <a href="hospital.html">HOME</a> 
+                </li>
+                <li>
+                    <a href="services.html">SERVICES</a>
+                </li>
+                <li>
+                    <a href="aboutus.html">ABOUT US</a>
+                </li>
+                <li>
+                    <a href="contactus.html">CONTACT US</a>
+                </li>
+            </ul>
+        </div>
+        </div>
+        <div class="col-md-2">
+            <a href="registration.html" class="btn-green mt-20px">USER REGISTRATION</a>
+        </div>
+        </div>
+    </div>
+    </header>
+    <body >
+<form id="appointment-form" method="post" action="appointment.php">
+    <br><br><br><br><br>
+    <h2 align="center">APPOINTMENT FORM</h2>
+    <div class="form-group">
+        <label for="Department">Select Department:</label>
+        <select class="form-control" id="Department" name="Department">
+          <option value="cardiology">cardiology</option>
+          <option value="gynacoelogy">gynacoelogy</option>
+          <option value="pediatrics">pediatrics</option>
+          <option value="diabetology">diabetology</option>
+          <option value="others">others</option>
+        </select>
+      </div>
+    <div class="form-group">
+      <label for="doctor">Select Doctor:</label>
+      <select class="form-control" id="doctor" name="doctor">
+        <option value="dr-smith">Dr. Smith</option>
+        <option value="dr-johnson">Dr. Johnson</option>
+        <option value="dr-doe">Dr. Doe</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="date">Select Date:</label>
+      <input type="date" class="form-control" id="date" name="date">
+    </div>
+    <div class="form-group">
+      <label for="time">Select Time:</label>
+      <input type="time" class="form-control" id="time" name="time">
+    </div>
+    <button type="submit" class="btn btn-primary" ALIGN="center">Book Appointment</button>
+  </form>
+<script>
+    const appointmentForm = document.getElementById('appointment-form');
+appointmentForm.addEventListener('submit', function (event) {
+  event.preventDefault();
+  // Get form values
+  const doctor = document.getElementById('doctor').value;
+  const date = document.getElementById('date').value;
+  const time = document.getElementById('time').value;
+  // Create data object
+  const data = {
+    doctor: doctor,
+    date: date,
+    time: time
+  };
+  // Send data to the server
+  fetch('appointment.php', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      // Show success message
+      const successMsg = document.createElement('div');
+      successMsg.className = 'alert alert-success';
+      successMsg.innerHTML = 'Appointment successfully booked!';
+      appointmentForm.appendChild(successMsg);
+      // Clear form values
+      appointmentForm.reset();
+    })
+    .catch(function (error) {
+      // Show error message
+      const errorMsg = document.createElement('div');
+      errorMsg.className = 'alert alert-danger';
+      errorMsg.innerHTML = 'There was an error booking your appointment. Please try again later.';
+      appointmentForm.appendChild(errorMsg);
+    });
+});
+</script>  
+</body></html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BetterHelp</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all/css"
+integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+<link rel="styleesheet" href="./css/style.css">
+</head>
+<header>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-10 border">
+            <div class="logo border">
+                <a href="hospital.html"><img src="betterhelp.jpg" width="175px" height="75px" alt="logo"></a>
+            </div>
+        <div class="menu">
+            <ul>
+                <li>
+                    <a href="hospital.html">HOME</a> 
+                </li>
+                <li>
+                    <a href="services.html">SERVICES</a>
+                </li>
+                <li>
+                    <a href="aboutus.html">ABOUT US</a>
+                </li>
+                <li>
+                    <a href="contactus.html">CONTACT US</a>
+                </li>
+            </ul>
+        </div>
+        </div>
+        <div class="col-md-2">
+            <a href="registration.html" class="btn-green mt-20px">USER REGISTRATION</a>
+        </div>
+        </div>
+    </div>
+    </header>
+<section class="banner" style="background-image: url(surgery.jpg)";>
+<div class="container">
+    <div class="banner-container">
+        <h1>OUR EXPERTISE AT YOUR SERVICE</h1>
+    </div>
+    <div class="service">
+        <a href="services.html">
+            <div class="service-content">
+                OUR SERVICE PROVIDERS
+            </div>
+        </a>
+        <a href="appointment.html">
+            <div class="service-content">
+                BOOK AN APPOINTMENT
+            </div>
+        </a>    <a href="tel-1-800-900">
+            <div class="service-content">
+                HAVE AN EMERGENCY?
+            </div>
+            <div class="service-icon">
+                <div class="call-number">
+                    <p>EMERGENCY LINE <h4>1-800-900</h4></p>
+                </div>
+            </div>
+        </a>
+    </div>
+</div></section>
+<section class="work">
+    <div class="container-fluid text-center">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="hours">
+                <h2>WORKING HOURS</h2>
+                <div class="time">
+                    <div class="booking">MONDAY - WEDNESDAY</div>
+                   <div class="booking">8AM- 7PM</div>   
+                </div>
+                <div class="time">
+                    <div class="booking">THURSDAY-FRIDAY</div>
+                   <div class="booking">8AM- 7PM</div>   
+                </div>
+                <div class="time">
+                    <div class="booking">SATURDAY</div>
+                   <div class="booking">9AM- 6PM</div>   
+                </div>
+                <div class="time">
+                    <div class="booking">SUNDAY</div>
+                   <div class="booking">10AM- 5PM</div>   
+                </div>
+               
+            </div>
+         
+        </div>
+         <div class="col-md-4">
+            <div class="response">
+                <a href="javascript:void(0);">
+                    <div class="response-bg" style="background: url(response.jpg);"></div>
+                    <div class="response-content">
+                        <h2>OUR COVID-19 RESPONSE</h2>
+                        <P>For everyday care or life-changing care, you can count on us to keep you and your loved one's safe and healthy</P>
+                        <br>
+                        <button type="button" class="read-more mt-20px"></button>
+                    </div>
+                </a>
+            </div>
+         </div>
+            <div class="col-md-4">
+                <div class="response">
+                    <a href="javascript:void(0);">
+                        <div class="response-bg" style="background: url(information.jpg);"></div>
+                        <div class="response-content">
+                            <h2>OUR MEDICAL CAMPS</h2>
+                            <P>BetterHelp has organized 614 medical camps and treated over 62,000 patients through the Medical Camps project.</P>
+                            <br>
+                            <button type="button" class="read-more mt-20px"></button>
+                        </div>
+                    </a>
+                </div></div>
+             </div>
+         </div>
+        </div>
+    </div>
+    </div>
+</section>
+<script>
+    var header = document.getElementsByTagName("header");
+    window.onscroll = function () {scrollFunction()};
+    function scrollFunction()
+    {
+if(document.body.scrollTop > 200 || document.documentElement.scrollTop > 200){
+    header[0].setAttribute("class","header-active")
+}
+else{
+    header[0].removeAttribute("class")
+
+}
+    }
+    </script>
+    </html>
+   

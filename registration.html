@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>  <title>BetterHelp</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all/css"
+integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="log.css">
+<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<header>
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-10 border">
+
+              <div class="logo col-md-2 border">
+                  <a href="hospital.html"><img src="betterhelp.jpg" width="175px" height="75px" alt="logo"></a>
+              </div>
+          <div class="menu">
+              <ul>
+                  <li><a href="hospital.html">HOME</a> </li>
+                  <li><a href="services.html">SERVICES</a></li>
+                  <li> <a href="aboutus.html">ABOUT US</a> </li>
+                  <li> <a href="contactus.html">CONTACT US</a> </li>
+              </ul>
+          </div>
+          </div>
+          <div class="col-md-2">
+              <a href="registration.html" class="btn-green mt-20px">USER REGISTRATION</a>
+          </div>
+          </div>
+      </div>
+      </header>
+
+  <body>
+    <div id="registration-container">
+      <br><br><br><br><br>
+      <h2>Hospital User Registration</h2>
+      <form id="registration-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br><br>
+        <div class="form-group">
+            <label for="gender">GENDER:</label>
+            <select class="form-control" id="gender" name="gender">
+              <option value="FEMALE">FEMALE</option>
+              <option value="MALE">MALE</option>
+              <option value="OTHERS">OTHERS</option>
+            </select>
+          </div>
+        <label for="age">AGE:</label>
+        <input type="number"id="age" name="age" required>
+        <br><br>
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required>
+        <br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br><br>
+        <label for="address">Address:</label>
+        <textarea type="address"id="address" name="address" required></textarea>
+        <br><br>
+       
+        <a href="regsuccess.html" class="btn-green mt-20px">
+          REGISTER</a>
+      </form>
+      <div id="registration-result"></div>
+    </div>
+    <script >
+          const registrationForm = document.getElementById('registration-form');
+  const registrationResult = document.getElementById('registration-result');
+  
+  registrationForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    
+    const uniqueID = generateUniqueID();
+    
+    registrationResult.innerHTML = 'Your registration was successful. Your unique ID is: ' + uniqueID;
+  });
+  
+  function generateUniqueID() {
+    return 'xxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx'.replace(/[x]/g, function(c) {
+      const r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+      return v.toString(16);
+    });
+  }
+    </script>
+ </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BetterHelp</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <div class="main">
+            <div class="logo"><img src="betterhelp.jpg"></div>
+            <ul>
+                <li class="active"><a href="main.html">HOME</a></li>
+                <li><a href="aboutus.html">ABOUT US</a></li>
+                <li><a href="home.html">CONTACT US</a></li>
+            </ul>
+        </div>
+<br><br><br><br><br>
+<script>
+function funval()
+{
+var n=document.forms["form1"]["username"].value;
+var p=document.forms["form1"]["password"].value;
+var e=document.forms["form1"]["email"].value;
+var b=document.forms["form1"]["birthdate"].value;
+if(n=="")
+{
+   window.alert("fill username");
+}
+if(p=="")
+{
+   window.alert("fill password");
+}
+if(e=="")
+{
+   window.alert("fill email");
+}
+if(b=="")
+{
+    window.alert("fill birthdate");
+}
+}
+</script>
+<form name="form1" align="center" ID="id" action="main.html">
+<fieldset><legend><h2>SIGN UP</h2></legend>
+<label for="fname"><strong>FIRST NAME:</strong></label><input type="text" id="fname" name="username"><br><br>
+<label for="lname"><strong>LAST NAME:</strong></label><input type="text" id="lname" name="lname"><br><br>
+<label for="email"><strong>EMAIL ID:</strong></label><input type="email" id="email" name="email"><br><br>
+<label for="birthdate"><strong>BIRTH DATE:</strong></label><input type="date" id="birthdate" name="birthdate"><br><br>
+<label for="password"><strong>PASSWORD:</strong></label><input type="password" id="password" name="password"><br><br>
+<button onclick="funval()"> Submit</button>
+<background-image : linear-gradient(135deg, #5EFCE8 10%, #736EFE 100%);color: #333;></background-image:>
+</fieldset> 
+</form><P ALIGN="CENTER">
+<IMG SRC="betterhelp.jpg" width="600px" height="400px"></P>
+</body>
+</html>
